@@ -1,0 +1,147 @@
+/* Reset some default styles for the body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Style the header section */
+header {
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px 0;
+}
+
+/* Style headings */
+h1,
+h2 {
+    color: #333;
+}
+
+/* Style the product section */
+#product {
+    background-color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the benefits section */
+#benefits {
+    background-color: #f7f7f7;
+    padding: 40px;
+    text-align: center;
+}
+
+#benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+#benefits li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* Style the how it works section */
+#how-it-works {
+    background-color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the testimonials section */
+#testimonials {
+    background-color: #f7f7f7;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Style the pricing section */
+#pricing {
+    background-color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style buttons */
+.cta-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #2977ac;
+}
+
+/* Style the contact section */
+#contact {
+    background-color: #f7f7f7;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Style the footer section */
+footer {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Style the testimonial name */
+.customer-name {
+    font-style: italic;
+    color: #555;
+}
+
+.navbar {
+    background-color: #3498db;
+    overflow: hidden;
+}
+
+.navbar-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar-list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-list li a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* Responsive design - adjust as needed */
+@media (max-width: 768px) {
+    header {
+        font-size: 20px;
+    }
+
+    #product,
+    #benefits,
+    #how-it-works,
+    #testimonials,
+    #pricing,
+    #contact {
+        padding: 20px;
+    }
+}

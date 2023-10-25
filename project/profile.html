@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+    <header>
+        <a id="go-back" href="ecoglow.html" class="cta-button">Go back</a>
+        <h1>My Profile</h1>
+    </header>
+
+    <section id="profile">
+        <div id="profile-image">
+            <img src="images/default-profile-picture.jpeg" alt="Profile Picture">
+            <button id="change-image" class="cta-button">Change Picture</button>
+        </div>
+        <div id="profile-info">
+            <div id="name">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" value="John" disabled>
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" value="Doe" disabled>
+            </div>
+            <div id="location">
+                <label for="city">City:</label>
+                <input type="text" id="city" value="New York" disabled>
+                <label for="country">Country:</label>
+                <input type="text" id="country" value="USA" disabled>
+            </div>
+            <button id="edit-profile" class="cta-button">Edit Profile</button>
+            <button id="save-profile" class="cta-button" style="display: none;">Save Profile</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Profile. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const changeImageBtn = document.getElementById("change-image");
+            const editProfileBtn = document.getElementById("edit-profile");
+            const saveProfileBtn = document.getElementById("save-profile");
+
+            const inputs = document.querySelectorAll("#profile-info input");
+            inputs.forEach(input => input.disabled = true);
+
+            changeImageBtn.addEventListener("click", function () {
+                // Assuming you have an input field for image upload with an id "image-upload"
+                const imageUploadInput = document.createElement("input");
+                imageUploadInput.type = "file";
+                imageUploadInput.accept = "image/*";
+                imageUploadInput.style.display = "none";
+
+                // Trigger a click event on the hidden input to open the file dialog
+                imageUploadInput.click();
+
+                // Listen for changes to the file input
+                imageUploadInput.addEventListener("change", function () {
+                    const file = imageUploadInput.files[0];
+
+                    if (file) {
+                        // Create a URL for the selected image
+                        const imageUrl = URL.createObjectURL(file);
+
+                        // Display the selected image in the profile image element
+                        const profileImage = document.getElementById("profile-image").querySelector("img");
+                        profileImage.src = imageUrl;
+                    }
+                });
+            });
+
+
+            editProfileBtn.addEventListener("click", function () {
+                inputs.forEach(input => input.disabled = false);
+                editProfileBtn.style.display = "none";
+                saveProfileBtn.style.display = "block";
+            });
+
+            saveProfileBtn.addEventListener("click", function () {
+                inputs.forEach(input => input.disabled = true);
+                editProfileBtn.style.display = "block";
+                saveProfileBtn.style.display = "none";
+            });
+        });
+    </script>
+</body>
+
+</html>
